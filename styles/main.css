@@ -1,0 +1,83 @@
+.header {
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+.cursor {
+  cursor: pointer;
+}
+.sub-header {
+  background-color: #222222;
+}
+.sub-header-text {
+  color: white;
+}
+.dropdown-btn {
+  border: 1px solid;
+  padding: 1px;
+  border-radius: 10px;
+}
+.courseBox {
+  width: 79px;
+  height: 70px;
+  background: #f2f2f2 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.courseMenu {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #f4f4f4;
+  border-radius: 0px 0px 4px 4px;
+  opacity: 1;
+}
+.courseDesc {
+  font-size: 12px;
+}
+.reactBtn {
+  text-align: center;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 12px;
+  background: #ff6738;
+  border-radius: 5px;
+  border: none;
+  padding: 0px 15px;
+}
+.courseAuthor {
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 0px;
+  color: #080808;
+  opacity: 1;
+}
+.cartBtn {
+  background: #ff6738 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  opacity: 1;
+  color: white;
+  padding: 2px 12px;
+  font-size: 13px;
+}
+.cartBox {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+.cartContent{
+    height: 400px;
+    overflow-y: scroll;
+}
+.searchIcon{
+    position: absolute;
+    right: 0px;
+    top:1px;
+    border-radius: 0px 5px 5px 0px;
+    height: 26px;
+    padding: 3px;
+    background: #ff6738 0% 0% no-repeat padding-box;
+}
+.searchInput{
+    height: 28px !important;
+    padding: 0 !important;
+}
