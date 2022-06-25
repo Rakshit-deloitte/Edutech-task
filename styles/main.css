@@ -3,6 +3,11 @@
   box-shadow: 0px 3px 6px #00000029;
   opacity: 1;
 }
+.main-logo:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
 .cursor {
   cursor: pointer;
 }
@@ -64,20 +69,44 @@
   box-shadow: 0px 3px 6px #00000029;
   opacity: 1;
 }
-.cartContent{
-    height: 400px;
-    overflow-y: scroll;
+.cartContent {
+  height: 400px;
+  overflow-y: scroll;
 }
-.searchIcon{
-    position: absolute;
-    right: 0px;
-    top:1px;
-    border-radius: 0px 5px 5px 0px;
-    height: 26px;
-    padding: 3px;
-    background: #ff6738 0% 0% no-repeat padding-box;
+.searchIcon {
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  border-radius: 0px 5px 5px 0px;
+  height: 26px;
+  padding: 3px;
+  background: #ff6738 0% 0% no-repeat padding-box;
 }
-.searchInput{
-    height: 28px !important;
-    padding: 0 !important;
+.searchInput {
+  height: 28px !important;
+  padding: 0 !important;
 }
+
+.pdpRow{
+  background-color: #222222;
+  color: white;
+}
+
+.pdp-author{
+  color: #ff6738;
+}
+
+.courseDetils{
+  position: absolute;
+  right: 0;
+  top: -116px;
+}
+.custom-page-link{
+  color: #ff6738 !important;
+  border: none !important;
+}
+.custom-page-link:focus{
+  outline: none !important;
+}
+
+

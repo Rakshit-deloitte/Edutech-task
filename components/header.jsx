@@ -1,20 +1,28 @@
+import Link from "next/link";
 import React from "react";
 
 function Header() {
   return (
     <>
       <div className="row align-items-center justify-content-between header p-2">
-        <div className="col">
-          <img src="/Images/Logo-2.png" />
-        </div>
+        <Link href={`/`}>
+          <div className="col">
+            <img src="/Images/Logo-2.png" className="main-logo" />
+          </div>
+        </Link>
+
         <div className="col-auto">
           <div className="row align-items-center">
-            <div className="col-auto cursor">
-              <p className="font-weight-bold mb-0">Courses</p>
-            </div>
-            <div className="col-auto cursor">
-              <p className="mb-0">My Wishlist</p>
-            </div>
+            <Link href={`/`}>
+              <div className="col-auto cursor">
+                <p className="font-weight-bold mb-0">Courses</p>
+              </div>
+            </Link>
+            <Link href={`/wishlist`}>
+              <div className="col-auto cursor">
+                <p className="mb-0">My Wishlist</p>
+              </div>
+            </Link>
             <div className="col-auto cursor">
               <img src="Images/shopping-cart.svg" />
             </div>

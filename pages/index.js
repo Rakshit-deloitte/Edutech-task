@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Cart from "../components/cart";
 import CourseCard from "../components/course-card";
@@ -8,6 +8,7 @@ import SearchBar from "../components/searchbar";
 import { setCourse } from "../redux/action/course";
 
 function Home() {
+  const [pagination, setPagination] = useState(5);
   const dispatch = useDispatch();
   useEffect(() => {
     axios
@@ -19,6 +20,7 @@ function Home() {
         console.log(err);
       });
   }, []);
+
   const courses = useSelector((state) => {
     return state.course;
   });
@@ -45,9 +47,33 @@ function Home() {
                 </div>
               </div>
             </div>
-            {courses.map((course) => (
-              <CourseCard course={course} key={course.id} />
-            ))}
+            {courses.map(
+              (course, index) =>
+                index < pagination && <CourseCard course={course} key={course.id} />
+            )}
+            <nav aria-label="Page navigation example mt-2">
+              <ul className="pagination">
+                <li className="page-item">
+                  <a className="page-link custom-page-link">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span className="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link custom-page-link" onClick={()=>setPagination(5)}>1</a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link custom-page-link" onClick={()=>setPagination(7)}>2</a>
+                </li>
+
+                <li className="page-item">
+                  <a className="page-link custom-page-link">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span className="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className="col-4">
             <SearchBar />
@@ -55,6 +81,7 @@ function Home() {
           </div>
         </div>
       </div>
+     
     </>
   );
 }
