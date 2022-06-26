@@ -1,9 +1,9 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-
 function Cart() {
-  const [total,setTotal]=useState(0)
+  const [total, setTotal] = useState(0);
   const CartItems = useSelector((state) => {
     return state.cart;
   });
@@ -46,9 +46,20 @@ function Cart() {
           </p>
         )}
       </div>
-      <div className="cart-value py-2">
-        <p className="mb-0 courseAuthor "> Total Cart Value</p>
-        <h5> $ {total}/-</h5>
+      <div className="row align-items-center">
+        <div className="col">
+          <div className="cart-value py-2">
+            <p className="mb-0 courseAuthor "> Total Cart Value</p>
+            <h5> $ {total}/-</h5>
+          </div>
+        </div>
+        {CartItems.length>0 && (
+          <div className="col-auto cursor">
+            <Link href={`/checkout`}>
+            <h5 className="pdp-author">Go to Checkout</h5>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

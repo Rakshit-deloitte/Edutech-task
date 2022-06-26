@@ -2,7 +2,6 @@ import Link from "next/link";
 
 function Navigation(props) {
    const {course}=props
-    console.log("ghj",course)
   return (
     <>
       <div className="container my-3 d-flex">

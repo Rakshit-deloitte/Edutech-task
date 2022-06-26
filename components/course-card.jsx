@@ -41,7 +41,6 @@ function CourseCard(props) {
   };
 
   const handleWishlist = (data) => {
-    console.log(data);
     wishlistArray.push(data);
     let uniqueWishlist = [...new Set(wishlistArray)];
     dispatch(setWishlist(uniqueWishlist));
@@ -50,9 +49,7 @@ function CourseCard(props) {
 
   const deleteWishlist = (data) => {
     const index = wishListCourse.indexOf(data);
-    console.log(index);
     wishListCourse.splice(index, 1);
-    console.log(wishListCourse);
     dispatch(setWishlist(wishListCourse));
   };
 
@@ -86,12 +83,16 @@ function CourseCard(props) {
         </div>
         <div className="col-auto">
           <div className="form-row align-items-center">
-            <div
-              className="col-auto cursor"
-              onClick={() => handleWishlist(course)}
-            >
-              <img src="/Images/star.svg" height={13} />
-            </div>
+            {wishlist ? (
+              ""
+            ) : (
+              <div
+                className="col-auto cursor"
+                onClick={() => handleWishlist(course)}
+              >
+                <img src="/Images/star.svg" height={13} />
+              </div>
+            )}
 
             <div className="col-auto courseDesc">
               <p className="mb-0 font-weight-bold">$ {course.discount}</p>

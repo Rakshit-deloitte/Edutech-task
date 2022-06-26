@@ -23,9 +23,11 @@ function Header() {
                 <p className="mb-0">My Wishlist</p>
               </div>
             </Link>
-            <div className="col-auto cursor">
-              <img src="Images/shopping-cart.svg" />
-            </div>
+            <Link href={`/checkout`}>
+              <div className="col-auto cursor">
+                <img src="Images/shopping-cart.svg" />
+              </div>
+            </Link>
             <div className="col-auto cursor">
               <img src="Images/profile.svg" />
             </div>

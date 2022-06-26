@@ -5,9 +5,11 @@ import Cart from "../components/cart";
 import CourseCard from "../components/course-card";
 import Header from "../components/header";
 import SearchBar from "../components/searchbar";
+import SortCourse from "../components/sort-dropdown";
 import { setCourse } from "../redux/action/course";
 
-function Home() {
+function Home(props) {
+  
   const [pagination, setPagination] = useState(5);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,6 +26,7 @@ function Home() {
   const courses = useSelector((state) => {
     return state.course;
   });
+
   return (
     <>
       <Header />
@@ -34,36 +37,39 @@ function Home() {
               <div className="col">
                 <p className="mb-0 font-weight-bold">All courses</p>
               </div>
-              <div className="col-auto">
-                <div className="btn-group">
-                  <button
-                    className="btn btn-sm dropdown-toggle dropdown-btn"
-                    type="button"
-                    data-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Course price
-                  </button>
-                </div>
+              <div className="col-auto mb-2">
+                <SortCourse />
               </div>
             </div>
             {courses.map(
               (course, index) =>
-                index < pagination && <CourseCard course={course} key={course.id} />
+                index < pagination && (
+                  <CourseCard course={course} key={course.id} />
+                )
             )}
-            <nav aria-label="Page navigation example mt-2">
-              <ul className="pagination">
-                <li className="page-item">
+            <nav aria-label="Page navigation example mt-2 ">
+              <ul className="pagination cursor ">
+                <li className="page-item ">
                   <a className="page-link custom-page-link">
                     <span aria-hidden="true">&laquo;</span>
                     <span className="sr-only">Previous</span>
                   </a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link custom-page-link" onClick={()=>setPagination(5)}>1</a>
+                  <a
+                    className="page-link custom-page-link"
+                    onClick={() => setPagination(5)}
+                  >
+                    1
+                  </a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link custom-page-link" onClick={()=>setPagination(7)}>2</a>
+                  <a
+                    className="page-link custom-page-link"
+                    onClick={() => setPagination(7)}
+                  >
+                    2
+                  </a>
                 </li>
 
                 <li className="page-item">
@@ -81,7 +87,6 @@ function Home() {
           </div>
         </div>
       </div>
-     
     </>
   );
 }
