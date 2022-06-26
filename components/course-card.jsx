@@ -144,6 +144,7 @@ function CourseCard(props) {
       <SimpleSnackbar
         open={Wishlistopen}
         handleClose={handleClose}
+        severity={"success"}
         message={"Item added to wishlist, Please check on wishlist page."}
       />
     </>

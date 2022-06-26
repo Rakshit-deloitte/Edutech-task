@@ -31,9 +31,11 @@ function SearchBar() {
       <form className="my-2 position-relative">
         <input
           type={"search"}
-          className="form-control searchInput"
+          className="form-control searchInput px-2"
           onChange={handleChange}
           value={searchField}
+          placeholder="search for courses"
+
         />
         <span className="searchIcon">
           <img src="/Images/search.svg" width={20} height={14}></img>

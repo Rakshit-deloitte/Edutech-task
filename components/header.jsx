@@ -28,9 +28,11 @@ function Header() {
                 <img src="Images/shopping-cart.svg" />
               </div>
             </Link>
-            <div className="col-auto cursor">
-              <img src="Images/profile.svg" />
-            </div>
+            <Link href={`/profile`}>
+              <div className="col-auto cursor">
+                <img src="Images/profile.svg" />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
