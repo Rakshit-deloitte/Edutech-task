@@ -34,11 +34,11 @@ function CourseDescription(props) {
     <>
       <div className="row pdpRow py-4">
         <div className="container d-flex flex-column justify-content-between">
-          <h5 className="mb-2">{course.title}</h5>
-          <p>{course.courseDescription}</p>
+          <h5 className="mb-2">{course?.title}</h5>
+          <p>{course?.courseDescription}</p>
           <p className="pdp-author">{course?.courseCreator}</p>
 
-          <button className="reactBtn col-2">{course.tags[0]}</button>
+          <button className="reactBtn col-2">{course?.tags[0]}</button>
         </div>
       </div>
       <div className="container my-2">
@@ -78,8 +78,8 @@ function CourseDescription(props) {
                 ></iframe>
               </div>
               <div className="col-auto border my-2 py-2">
-                <h5>$ {course.discount}/-</h5>
-                <del>$ {course.price}/-</del>
+                <h5>$ {course?.discount}/-</h5>
+                <del>$ {course?.price}/-</del>
                 <p className="pdp-author">8 hrs left for this course</p>
                 <div className="row justify-content-around">
                   <div

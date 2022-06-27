@@ -9,7 +9,7 @@ function Navigation(props) {
           <p className="mb-0 cursor">All courses</p>
         </Link>
         <img src={"/Images/leftArrow.svg"} className="mx-3" />
-        <p className="mb-0 font-weight-bold">{course.title}</p>
+        <p className="mb-0 font-weight-bold">{course?.title}</p>
       </div>
     </>
   );
